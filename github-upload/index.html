@@ -329,6 +329,13 @@
   footer .logo{justify-content:center;margin-bottom:14px;}
   .footer-links{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:14px 0;font-weight:600;}
   .footer-links a{text-decoration:none;color:var(--teal-700);}
+  .footer-credit{margin:26px auto 0;padding-top:18px;max-width:520px;border-top:1px solid var(--line);font-size:.72rem;color:var(--ink-soft);opacity:.85;display:flex;justify-content:center;flex-wrap:wrap;gap:6px;}
+  .footer-credit strong{color:var(--ink-soft);font-weight:700;}
+  .footer-credit-sep{opacity:.6;}
+  @media (max-width:480px){
+    .footer-credit{flex-direction:column;gap:2px;}
+    .footer-credit-sep{display:none;}
+  }
 
   /* ---------- WhatsApp flutuante ---------- */
   .wa-float{
@@ -587,6 +594,11 @@
     <p style="font-size:.76rem;max-width:520px;margin:18px auto 0;">
       Seus dados (nome e WhatsApp) são usados só para a Cristina entrar em contato sobre as aulas de yoga — não são compartilhados com terceiros nem usados para outra finalidade.
     </p>
+    <div class="footer-credit">
+      <span>© 2026 CrisYoga. Todos os direitos reservados.</span>
+      <span class="footer-credit-sep" aria-hidden="true">·</span>
+      <span>Site desenvolvido por <strong>AMS Digital Mkt</strong></span>
+    </div>
   </div>
 </footer>
 
