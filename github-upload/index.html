@@ -33,7 +33,10 @@
 
     // Cole os IDs reais quando existirem. Enquanto vazios, o tracking simplesmente não dispara (sem erro no console).
     GA4_MEASUREMENT_ID: "",
-    META_PIXEL_ID: ""
+    META_PIXEL_ID: "",
+
+    // Cole o link do canal do YouTube da Cristina quando ela enviar. Enquanto vazio, o ícone não aparece no rodapé.
+    YOUTUBE_URL: ""
   };
 </script>
 
@@ -355,6 +358,42 @@
   }
 
   ::selection{background:var(--teal-500);color:#fff;}
+
+  /* ---------- Sobre: foto da instrutora ---------- */
+  .autoridade-card .foto-circle{
+    width:140px;height:140px;margin:0 auto 16px;border-radius:50%;
+    overflow:hidden;border:3px solid rgba(255,255,255,.35);
+    box-shadow:0 14px 30px -12px rgba(0,0,0,.4);
+  }
+  .autoridade-card .foto-circle img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- Espaço ---------- */
+  .espaco{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .espaco-grid{display:grid;gap:16px;}
+  @media(min-width:760px){
+    .espaco-grid{grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:16px;}
+    .espaco-grid .foto-principal{grid-row:1 / 3;}
+  }
+  .espaco-grid figure{margin:0;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative;background:#fff;}
+  .espaco-grid img{width:100%;height:100%;object-fit:cover;display:block;}
+  .espaco-grid .foto-principal img{aspect-ratio:4/5;}
+  .espaco-grid .foto-secundaria img{aspect-ratio:16/10;}
+  @media(max-width:759px){ .espaco-grid .foto-principal img{aspect-ratio:16/11;} }
+  .espaco-copy{max-width:640px;margin:0 auto 40px;text-align:center;}
+  .espaco-copy p{color:var(--ink-soft);font-size:1.05rem;}
+  .espaco-destaque{font-family:'Baloo 2',cursive;color:var(--teal-700);font-size:1.15rem;margin-bottom:10px;}
+
+  /* ---------- Redes sociais (rodapé) ---------- */
+  .social-row{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:16px 0;}
+  .social-row a{
+    width:42px;height:42px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    background:var(--teal-100);color:var(--teal-700);
+    transition:transform .15s ease, background .15s ease;
+  }
+  .social-row a:hover{background:var(--teal-500);color:#fff;transform:translateY(-2px);}
+  .social-row a svg{width:20px;height:20px;}
+  .social-row a[hidden]{display:none;}
 </style>
 </head>
 <body>
@@ -372,7 +411,7 @@
   <section class="hero" id="hero">
     <div class="container">
       <div>
-        <span class="eyebrow">Yoga & Aerial Yoga · Vargem Grande Paulista</span>
+        <span class="eyebrow">Yoga & Aerial Yoga · Vargem Grande Paulista - SP</span>
         <h1>Reencontre o equilíbrio entre corpo e mente, no seu ritmo</h1>
         <p class="lead">Aulas de Hatha Yoga, Vinyasa Yoga e Aerial Yoga com a instrutora Cristina Shiraishi — presencial no studio ou online, para todos os níveis, mesmo que você nunca tenha praticado.</p>
         <div class="hero-actions">
@@ -397,8 +436,8 @@
   <section class="autoridade" id="sobre">
     <div class="container autoridade-grid">
       <div class="autoridade-card">
-        <div class="badge-circle">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6" stroke-linecap="round"/></svg>
+        <div class="foto-circle">
+          <img src="assets/perfil-cristina.jpg" alt="Cristina Shiraishi, instrutora de Yoga e Aerial Yoga" loading="lazy">
         </div>
         <h3>Cristina Shiraishi</h3>
         <div class="role">Instrutora de Yoga e Aerial Yoga</div>
@@ -413,7 +452,7 @@
         <span class="eyebrow">Quem vai te acompanhar</span>
         <h2>Mais de uma década ensinando yoga com atenção a cada corpo</h2>
         <p>Cristina pratica e ensina Hatha Yoga, Vinyasa Yoga e Aerial Yoga há mais de 10 anos. Morou 20 anos no Japão, onde aprofundou seus estudos e desenvolveu experiência conduzindo aulas para públicos bem diferentes entre si — de iniciantes completos a praticantes avançados.</p>
-        <p>Hoje ela atende no seu próprio studio em Vargem Grande Paulista e também online, sempre adaptando a prática ao momento e ao corpo de cada aluna — não o contrário.</p>
+        <p>Hoje ela atende no seu próprio studio em Vargem Grande Paulista - SP e também online, sempre adaptando a prática ao momento e ao corpo de cada aluna — não o contrário.</p>
         <div class="stat-row">
           <div class="stat"><strong>10+</strong><span>anos de prática</span></div>
           <div class="stat"><strong>3</strong><span>modalidades</span></div>
@@ -454,6 +493,31 @@
     </div>
   </section>
 
+  <!-- ESPAÇO -->
+  <section class="espaco" id="espaco">
+    <div class="container">
+      <div class="espaco-copy">
+        <span class="eyebrow">O espaço</span>
+        <h2>Um ambiente pensado pra sua prática</h2>
+      </div>
+      <div class="espaco-grid">
+        <figure class="foto-principal">
+          <img src="assets/espaco-aerial-veranda.jpg" alt="Cristina praticando Aerial Yoga no espaço coberto do studio, com vista para o jardim" loading="lazy">
+        </figure>
+        <figure class="foto-secundaria">
+          <img src="assets/espaco-veranda-ampla.jpg" alt="Vista ampla do espaço coberto do studio, com tecidos de Aerial Yoga e jardim ao fundo" loading="lazy">
+        </figure>
+        <figure class="foto-secundaria">
+          <img src="assets/espaco-studio-interno.jpg" alt="Sala interna do studio para aulas de Yoga e Aerial Yoga" loading="lazy">
+        </figure>
+      </div>
+      <div class="espaco-copy" style="margin-top:36px;">
+        <p class="espaco-destaque">Ambiente amplo, arejado, em contato com o clima e a natureza — conexão perfeita para suas aulas.</p>
+        <p>O studio fica dentro de uma área verde, com espaço coberto ao ar livre para as aulas de Aerial Yoga e sala interna para os dias mais frios ou chuvosos. Luz natural, plantas ao redor e silêncio — tudo pensado pra você se desconectar da rotina antes mesmo de começar a prática.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- COMO FUNCIONA -->
   <section id="como-funciona" style="background:var(--teal-100);">
     <div class="container">
@@ -475,7 +539,7 @@
         <div class="step">
           <div class="num">3</div>
           <h3>Você começa a praticar</h3>
-          <p>Presencial no studio em Vargem Grande Paulista ou online, no formato combinado com você.</p>
+          <p>Presencial no studio em Vargem Grande Paulista - SP ou online, no formato combinado com você.</p>
         </div>
       </div>
     </div>
@@ -585,10 +649,22 @@
 <footer>
   <div class="container">
     <a href="#hero" class="logo" style="justify-content:center;"><img src="logo-icon.jpg" alt="" class="mark"> CrisYoga</a>
-    <p>Cristina Shiraishi · Instrutora de Yoga e Aerial Yoga<br>Rua dos Cravos, 16 · Vargem Grande Paulista/SP</p>
+    <p>Cristina Shiraishi · Instrutora de Yoga e Aerial Yoga<br>Vargem Grande Paulista | SP</p>
+    <div class="social-row" id="social-row">
+      <a href="https://instagram.com/crisyoga" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@crisyogini" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.5 2h-3v13.2a2.8 2.8 0 11-2.3-2.75v-3.05a5.85 5.85 0 105.3 5.82V8.9a7.6 7.6 0 004.5 1.46V7.36A4.6 4.6 0 0116.5 2z"/></svg>
+      </a>
+      <a href="#" id="youtube-link" target="_blank" rel="noopener" aria-label="YouTube" hidden>
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.5a2.5 2.5 0 00-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7a2.5 2.5 0 001.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.5a2.5 2.5 0 001.8-1.8C22 15.2 22 12 22 12z" opacity=".18"/><path d="M22 12s0-3.2-.4-4.7a2.5 2.5 0 00-1.8-1.8C18.3 5 12 5 12 5s-6.3 0-7.8.5a2.5 2.5 0 00-1.8 1.8C2 8.8 2 12 2 12s0 3.2.4 4.7a2.5 2.5 0 001.8 1.8C5.7 19 12 19 12 19s6.3 0 7.8-.5a2.5 2.5 0 001.8-1.8C22 15.2 22 12 22 12z" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M10 15l5-3-5-3v6z"/></svg>
+      </a>
+      <a href="mailto:crisyoga.online@gmail.com" aria-label="E-mail">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
     <div class="footer-links">
-      <a href="https://instagram.com/crisyoga" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.tiktok.com/@crisyogini" target="_blank" rel="noopener">TikTok</a>
       <a href="mailto:crisyoga.online@gmail.com">crisyoga.online@gmail.com</a>
     </div>
     <p style="font-size:.76rem;max-width:520px;margin:18px auto 0;">
@@ -610,6 +686,80 @@
 (function(){
   "use strict";
   var CFG = window.CRISYOGA_CONFIG || {};
+
+  // ---------- YouTube no rodapé: só aparece se a URL estiver configurada ----------
+  if (CFG.YOUTUBE_URL){
+    var ytLink = document.getElementById("youtube-link");
+    if (ytLink){
+      ytLink.href = CFG.YOUTUBE_URL;
+      ytLink.hidden = false;
+    }
+  }
+
+  // ---------- UTM: captura de onde vem o tráfego (IG, TikTok, YouTube, etc.) ----------
+  // Guarda a última UTM da URL em sessionStorage, pra não perder a origem se a
+  // pessoa navegar pela página antes de preencher o formulário.
+  var UTM_STORAGE_KEY = "crisyoga_utm";
+  var CANAL_MAP = {
+    ig: "Instagram", instagram: "Instagram",
+    tiktok: "TikTok", tt: "TikTok",
+    youtube: "YouTube", yt: "YouTube",
+    facebook: "Facebook", fb: "Facebook",
+    google: "Google", whatsapp: "WhatsApp"
+  };
+
+  function lerUtmsDaUrl(){
+    var params = new URLSearchParams(window.location.search);
+    var utm = {
+      utm_source: params.get("utm_source") || "",
+      utm_medium: params.get("utm_medium") || "",
+      utm_campaign: params.get("utm_campaign") || ""
+    };
+    return (utm.utm_source || utm.utm_medium || utm.utm_campaign) ? utm : null;
+  }
+
+  function salvarUtm(utm){
+    try{ sessionStorage.setItem(UTM_STORAGE_KEY, JSON.stringify(utm)); }catch(e){}
+  }
+
+  function lerUtmSalva(){
+    try{
+      var raw = sessionStorage.getItem(UTM_STORAGE_KEY);
+      return raw ? JSON.parse(raw) : null;
+    }catch(e){ return null; }
+  }
+
+  (function capturarUtm(){
+    var utmDaUrl = lerUtmsDaUrl();
+    if (utmDaUrl) salvarUtm(utmDaUrl);
+  })();
+
+  function canalDeReferrer(ref){
+    if (!ref) return "";
+    if (ref.indexOf("instagram.com") > -1) return "Instagram";
+    if (ref.indexOf("tiktok.com") > -1) return "TikTok";
+    if (ref.indexOf("youtube.com") > -1 || ref.indexOf("youtu.be") > -1) return "YouTube";
+    if (ref.indexOf("facebook.com") > -1 || ref.indexOf("fb.com") > -1) return "Facebook";
+    if (ref.indexOf("google.") > -1) return "Google";
+    return "";
+  }
+
+  // Origem legível pro time comercial: prioriza UTM da URL, depois referrer, depois "Direto".
+  function getOrigem(){
+    var utm = lerUtmSalva();
+    if (utm && utm.utm_source){
+      var chave = utm.utm_source.toLowerCase();
+      return CANAL_MAP[chave] || utm.utm_source;
+    }
+    var doReferrer = canalDeReferrer(document.referrer);
+    if (doReferrer) return doReferrer;
+    return document.referrer ? document.referrer : "Direto";
+  }
+
+  function getCampanhaUtm(){
+    var utm = lerUtmSalva();
+    return utm && utm.utm_campaign ? utm.utm_campaign : "";
+  }
 
   // ---------- Tracking helpers (não erram se os IDs não existirem) ----------
   function track(eventName, params){
@@ -699,12 +849,13 @@
         whatsapp: whatsapp,
         modalidade: modalidade,
         formato: formato,
-        origem: document.referrer || "direto",
+        origem: getOrigem(),
+        campanha: getCampanhaUtm(),
         pagina: window.location.href,
         data_envio: new Date().toISOString()
       };
 
-      track("form_submit", { modalidade: modalidade, formato: formato });
+      track("form_submit", { modalidade: modalidade, formato: formato, origem: payload.origem, campanha: payload.campanha });
 
       // Log na planilha (Google Sheets via Apps Script) — nunca bloqueia o redirecionamento.
       // Ver README.md para configurar CRISYOGA_CONFIG.SHEET_WEBHOOK_URL.

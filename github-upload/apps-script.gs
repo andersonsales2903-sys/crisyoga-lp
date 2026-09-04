@@ -6,7 +6,7 @@
  * landing page e grava uma linha nova na aba "Leads".
  *
  * Não lida com nada sensível: só nome, whatsapp, modalidade, formato,
- * origem e data — os mesmos campos que já aparecem na LP.
+ * origem, campanha (UTM) e data — os mesmos campos que já aparecem na LP.
  */
 
 var SHEET_NAME = "Leads";
@@ -18,7 +18,7 @@ function doPost(e) {
 
     // Validação simples — evita gravar linhas vazias/lixo se a URL vazar.
     if (!data.nome || !data.whatsapp) {
-      return ContentService.createTextOutput(JSON.stringify({ ok: false, error: "campos obrigatórios ausentes" }))
+      return ContentService.createTextOutput(JSON.stringify({ ok: false, error: "campos obrigatorios ausentes" }))
         .setMimeType(ContentService.MimeType.JSON);
     }
 
@@ -29,7 +29,9 @@ function doPost(e) {
       data.modalidade || "",
       data.formato || "",
       data.origem || "",
-      data.pagina || ""
+      data.campanha || "",
+      data.pagina || "",
+      "Novo"
     ]);
 
     return ContentService.createTextOutput(JSON.stringify({ ok: true }))
@@ -46,7 +48,7 @@ function getOrCreateSheet_() {
   var sheet = ss.getSheetByName(SHEET_NAME);
   if (!sheet) {
     sheet = ss.insertSheet(SHEET_NAME);
-    sheet.appendRow(["Data/Hora", "Nome", "WhatsApp", "Modalidade", "Formato", "Origem", "Página"]);
+    sheet.appendRow(["Data/Hora", "Nome", "WhatsApp", "Modalidade", "Formato", "Origem", "Campanha (UTM)", "Pagina", "Status"]);
     sheet.setFrozenRows(1);
   }
   return sheet;
