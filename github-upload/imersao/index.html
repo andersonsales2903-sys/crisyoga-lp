@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<!-- build: imersao-meditacao-2026-09-04 -->
+<!-- Página apartada, não linkada no site principal. Ver README-IMERSAO.md para instruções de preenchimento. -->
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Imersão de Meditação · CrisYoga</title>
+<meta name="description" content="Inscreva-se na Imersão de Meditação no Studio CrisYoga, em Vargem Grande Paulista - SP.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mulish:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  ============================================================
+  CONFIGURAÇÃO DO EVENTO — preencha aqui quando os detalhes
+  estiverem definidos. Nenhum outro trecho do código precisa
+  ser tocado.
+
+  Campos que ficam vazios ("") simplesmente não aparecem na
+  página — não é preciso preencher tudo de uma vez.
+  ============================================================
+-->
+<script>
+  window.IMERSAO_CONFIG = {
+    // Nome oficial do evento. Enquanto vazio, usa o título genérico "Imersão de Meditação".
+    EVENT_NAME: "",
+
+    // Texto livre pra exibir data e horário, ex.: "Sábado, 20 de setembro · 9h às 12h".
+    // Vazio = a linha de data/horário some da página.
+    EVENT_WHEN: "",
+
+    // Texto livre de valor, ex.: "R$ 180" ou "Gratuito". Vazio = a linha de valor some.
+    EVENT_PRICE: "",
+
+    // Texto livre de vagas, ex.: "Vagas limitadas: 15 pessoas". Vazio = a linha some.
+    EVENT_VAGAS: "",
+
+    // Local — já preenchido, é o studio dela.
+    EVENT_LOCATION: "Studio CrisYoga · Vargem Grande Paulista - SP",
+
+    // Mesmo número/planilha do site principal.
+    WHATSAPP_NUMBER: "5511915287421",
+    SHEET_WEBHOOK_URL: "https://script.google.com/macros/s/AKfycbwtDPrKpFUAvmnX9er6Cib47xE4LO0O29Iw4LhwVXJCjzASYaS1Wg-s2-rmVIQf1PJp/exec"
+  };
+</script>
+
+<style>
+  :root{
+    --teal-900:#0f333c;
+    --teal-700:#155c6b;
+    --teal-600:#1f7f96;
+    --teal-500:#2291ac;
+    --teal-400:#4aa9c0;
+    --teal-100:#edf6f9;
+    --bg:#fbfaf6;
+    --cream:#fffdf9;
+    --ink:#173238;
+    --ink-soft:#3f5d63;
+    --line:#dceaee;
+    --radius:18px;
+    --shadow:0 12px 30px -14px rgba(15,51,60,.28);
+    --maxw:880px;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:'Mulish',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.55;
+  }
+  h1,h2,h3{
+    font-family:'Baloo 2',cursive;
+    color:var(--teal-900);
+    line-height:1.2;
+    margin:0 0 14px;
+  }
+  p{margin:0 0 14px;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
+  img{max-width:100%;display:block;}
+
+  .eyebrow{
+    display:inline-block;font-size:.82rem;font-weight:700;letter-spacing:.03em;
+    text-transform:uppercase;color:var(--teal-600);background:var(--teal-100);
+    padding:6px 14px;border-radius:999px;margin-bottom:14px;
+  }
+
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 26px;border-radius:999px;font-weight:700;font-size:1rem;
+    text-decoration:none;border:none;cursor:pointer;transition:transform .15s ease;
+  }
+  .btn-primary{background:linear-gradient(135deg,var(--teal-500),var(--teal-700));color:#fff;box-shadow:var(--shadow);}
+  .btn-primary:hover{transform:translateY(-2px);}
+  .btn-block{width:100%;}
+
+  header.site{
+    padding:22px 0;border-bottom:1px solid var(--line);background:var(--cream);
+  }
+  header.site .logo{
+    display:flex;align-items:center;gap:10px;font-family:'Baloo 2',cursive;
+    font-weight:700;color:var(--teal-700);font-size:1.15rem;text-decoration:none;
+    justify-content:center;
+  }
+  header.site .logo .mark{width:34px;height:34px;border-radius:9px;object-fit:cover;}
+
+  .hero{padding:56px 0 40px;text-align:center;}
+  .hero h1{font-size:clamp(1.8rem,4vw,2.5rem);max-width:20ch;margin-left:auto;margin-right:auto;}
+  .hero .lead{color:var(--ink-soft);font-size:1.08rem;max-width:52ch;margin:0 auto 22px;}
+
+  .info-row{
+    display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:22px 0 8px;
+  }
+  .info-pill{
+    display:flex;align-items:center;gap:8px;background:var(--teal-100);color:var(--teal-700);
+    font-weight:600;font-size:.92rem;padding:9px 16px;border-radius:999px;
+  }
+  .info-pill svg{width:16px;height:16px;flex-shrink:0;}
+  .info-pill.pending{background:var(--line);color:var(--ink-soft);font-style:italic;font-weight:500;}
+
+  section{padding:44px 0;}
+  .card{
+    background:var(--cream);border:1px solid var(--line);border-radius:var(--radius);
+    padding:30px;box-shadow:var(--shadow);
+  }
+  .beneficios{list-style:none;margin:0;padding:0;display:grid;gap:16px;}
+  .beneficios li{display:flex;gap:12px;align-items:flex-start;color:var(--ink-soft);}
+  .beneficios li svg{width:20px;height:20px;flex-shrink:0;margin-top:2px;color:var(--teal-500);}
+
+  .espaco-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px;}
+  .espaco-grid img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;border-radius:14px;}
+  @media (max-width:560px){ .espaco-grid{grid-template-columns:1fr;} }
+
+  .form-section{background:linear-gradient(160deg,var(--teal-700),var(--teal-900));border-radius:var(--radius);padding:34px;color:#fff;}
+  .form-section h2{color:#fff;}
+  .form-section .lead-copy{color:rgba(255,255,255,.82);}
+  .lead-form{display:grid;gap:16px;margin-top:20px;}
+  .lead-form label{display:block;font-weight:600;font-size:.9rem;margin-bottom:6px;color:rgba(255,255,255,.92);}
+  .lead-form input{
+    width:100%;padding:13px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);
+    background:rgba(255,255,255,.08);color:#fff;font-family:'Mulish',sans-serif;font-size:1rem;
+  }
+  .lead-form input::placeholder{color:rgba(255,255,255,.55);}
+  .lead-form input:focus{outline:2px solid var(--teal-400);}
+  .consent{display:flex;gap:10px;align-items:flex-start;font-size:.86rem;color:rgba(255,255,255,.82);}
+  .consent input{width:auto;margin-top:3px;}
+  .form-note{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:8px;text-align:center;}
+
+  .form-success{display:none;text-align:center;padding:30px 0;}
+  .form-success.show{display:block;}
+  .form-success svg{width:52px;height:52px;color:#fff;margin:0 auto 14px;}
+
+  footer{padding:34px 0;text-align:center;color:var(--ink-soft);font-size:.9rem;}
+  footer .logo{display:flex;align-items:center;gap:8px;justify-content:center;font-family:'Baloo 2',cursive;color:var(--teal-700);font-weight:700;margin-bottom:10px;text-decoration:none;}
+  footer .logo .mark{width:28px;height:28px;border-radius:8px;}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="container">
+    <a href="#" class="logo"><img src="../logo-icon.jpg" alt="" class="mark"> CrisYoga</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Imersão exclusiva</span>
+      <h1 id="event-title">Imersão de Meditação</h1>
+      <p class="lead">Um encontro presencial com a Cristína, no próprio studio dela, pra desacelerar e praticar meditação com orientação de perto.</p>
+      <div class="info-row" id="info-row"></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="card">
+        <h2>O que você vai vivenciar</h2>
+        <ul class="beneficios">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Práticas guiadas de meditação, num ritmo pensado pra quem nunca praticou e também pra quem já tem o hábito.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Um ambiente acolhedor, em contato com a natureza, pra sair do automático da rotina.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg> Acompanhamento direto da Cristína durante todo o encontro.</li>
+        </ul>
+        <!-- PENDENTE: ajustar/confirmar esses 3 pontos (ou substituir) assim que a Cristína definir o roteiro exato da imersão. -->
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <h2 style="text-align:center;">O espaço</h2>
+      <p style="text-align:center;color:var(--ink-soft);max-width:52ch;margin:0 auto;">A imersão acontece no studio próprio da Cristína — o mesmo espaço amplo, arejado e em contato com a natureza das aulas de yoga.</p>
+      <div class="espaco-grid">
+        <img src="../assets/espaco-veranda-ampla.jpg" alt="Studio CrisYoga">
+        <img src="../assets/espaco-aerial-veranda.jpg" alt="Studio CrisYoga">
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="form-section">
+        <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff;">Inscrição</span>
+        <h2>Garanta sua vaga</h2>
+        <p class="lead-copy">Preencha os dados abaixo — a Cristína confirma sua inscrição diretamente pelo WhatsApp.</p>
+
+        <form class="lead-form" id="imersao-form" autocomplete="off">
+          <div>
+            <label for="nome">Seu nome</label>
+            <input type="text" id="nome" name="nome" placeholder="Como você se chama?" required>
+          </div>
+          <div>
+            <label for="whatsapp">Seu WhatsApp</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="(11) 90000-0000" required>
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="consentimento" name="consentimento" required>
+            <span>Concordo em compartilhar meus dados acima só para a Cristína entrar em contato comigo sobre a imersão.</span>
+          </label>
+          <button type="submit" class="btn btn-primary btn-block" id="submit-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" opacity=".18"/><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.9 1.12-.17.19-.33.21-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.17 3 .14.19 2.03 3.1 4.92 4.34.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.19-.55-.33z"/></svg>
+            Quero me inscrever
+          </button>
+          <p class="form-note">Ao enviar, você abrirá o WhatsApp com uma mensagem já preenchida pra Cristína.</p>
+        </form>
+
+        <div class="form-success" id="form-success">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <h3 style="color:#fff;">Quase lá!</h3>
+          <p style="color:rgba(255,255,255,.85);">Abrindo o WhatsApp da Cristína com sua inscrição...</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <a href="#" class="logo"><img src="../logo-icon.jpg" alt="" class="mark"> CrisYoga</a>
+    <p>Cristína Shiraishi · Instrutora de Yoga e Aerial Yoga</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var CFG = window.IMERSAO_CONFIG || {};
+
+  // ---------- Título: usa o nome real do evento assim que for definido ----------
+  var titleEl = document.getElementById("event-title");
+  if (CFG.EVENT_NAME){
+    titleEl.textContent = CFG.EVENT_NAME;
+    document.title = CFG.EVENT_NAME + " · CrisYoga";
+  }
+
+  // ---------- Pills de info: só mostra o que já estiver preenchido ----------
+  var infoRow = document.getElementById("info-row");
+  var pillIcon = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var pillIconLocal = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-6.5 7-11.5A7 7 0 105 9.5C5 14.5 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>';
+  var pillIconValor = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.5 15.5c0 1 1 1.8 2.5 1.8s2.5-.7 2.5-1.7c0-2.6-5-1.3-5-3.9 0-1 1-1.7 2.5-1.7s2.5.7 2.5 1.7" stroke-linecap="round"/></svg>';
+  var pillIconVagas = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.3 3.1-6 7-6s7 2.7 7 6" stroke-linecap="round"/><circle cx="17.5" cy="9" r="2.3"/><path d="M15.5 14c2.8.4 5 2.5 5 5" stroke-linecap="round"/></svg>';
+
+  function addPill(icon, text){
+    var span = document.createElement("span");
+    span.className = "info-pill";
+    span.innerHTML = icon + "<span>" + text + "</span>";
+    infoRow.appendChild(span);
+  }
+
+  if (CFG.EVENT_WHEN) addPill(pillIcon, CFG.EVENT_WHEN);
+  addPill(pillIconLocal, CFG.EVENT_LOCATION || "Studio CrisYoga");
+  if (CFG.EVENT_PRICE) addPill(pillIconValor, CFG.EVENT_PRICE);
+  if (CFG.EVENT_VAGAS) addPill(pillIconVagas, CFG.EVENT_VAGAS);
+  if (!CFG.EVENT_WHEN){
+    var pending = document.createElement("span");
+    pending.className = "info-pill pending";
+    pending.textContent = "Data e horário em breve";
+    infoRow.appendChild(pending);
+  }
+
+  // ---------- Formulário ----------
+  var form = document.getElementById("imersao-form");
+  var successBox = document.getElementById("form-success");
+  var submitBtn = document.getElementById("submit-btn");
+
+  if (form){
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+
+      var nome = form.nome.value.trim();
+      var whatsapp = form.whatsapp.value.trim();
+
+      if (!nome || !whatsapp || !form.consentimento.checked){
+        alert("Só falta preencher nome, WhatsApp e marcar a autorização de contato.");
+        return;
+      }
+
+      submitBtn.disabled = true;
+
+      var eventName = CFG.EVENT_NAME || "Imersão de Meditação";
+
+      var payload = {
+        formulario: "imersao",
+        nome: nome,
+        whatsapp: whatsapp,
+        evento: eventName,
+        pagina: window.location.href,
+        data_envio: new Date().toISOString()
+      };
+
+      var logPromise;
+      if (CFG.SHEET_WEBHOOK_URL){
+        logPromise = fetch(CFG.SHEET_WEBHOOK_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain;charset=utf-8" },
+          body: JSON.stringify(payload)
+        }).catch(function(err){ console.warn("Falha ao registrar inscrição na planilha:", err); });
+      } else {
+        logPromise = Promise.resolve();
+      }
+
+      var redirect = function(){
+        var msg = "Olá Cristína! Me chamo " + nome + " e quero me inscrever na " + eventName + ".\n" +
+                  "Meu WhatsApp: " + whatsapp;
+        window.location.href = "https://wa.me/" + CFG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+      };
+
+      form.style.display = "none";
+      successBox.classList.add("show");
+
+      Promise.race([
+        logPromise,
+        new Promise(function(resolve){ setTimeout(resolve, 900); })
+      ]).finally(function(){
+        setTimeout(redirect, 500);
+      });
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
