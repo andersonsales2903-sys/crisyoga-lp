@@ -362,7 +362,7 @@
 
   /* ---------- Sobre: foto da instrutora ---------- */
   .autoridade-card .foto-circle{
-    width:140px;height:140px;margin:0 auto 16px;border-radius:50%;
+    width:180px;height:180px;margin:0 auto 16px;border-radius:50%;
     overflow:hidden;border:3px solid rgba(255,255,255,.35);
     box-shadow:0 14px 30px -12px rgba(0,0,0,.4);
   }
@@ -370,16 +370,12 @@
 
   /* ---------- Espaço ---------- */
   .espaco{background:var(--cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
-  .espaco-grid{display:grid;gap:16px;}
-  @media(min-width:760px){
-    .espaco-grid{grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:16px;}
-    .espaco-grid .foto-principal{grid-row:1 / 3;}
+  .espaco-grid{display:grid;gap:16px;grid-template-columns:1fr;}
+  @media(min-width:640px){
+    .espaco-grid{grid-template-columns:1fr 1fr;}
   }
   .espaco-grid figure{margin:0;border-radius:22px;overflow:hidden;box-shadow:var(--shadow);position:relative;background:#fff;}
-  .espaco-grid img{width:100%;height:100%;object-fit:cover;display:block;}
-  .espaco-grid .foto-principal img{aspect-ratio:4/5;}
-  .espaco-grid .foto-secundaria img{aspect-ratio:16/10;}
-  @media(max-width:759px){ .espaco-grid .foto-principal img{aspect-ratio:16/11;} }
+  .espaco-grid img{width:100%;height:100%;object-fit:cover;display:block;aspect-ratio:4/3;}
   .espaco-copy{max-width:640px;margin:0 auto 40px;text-align:center;}
   .espaco-copy p{color:var(--ink-soft);font-size:1.05rem;}
   .espaco-destaque{font-family:'Baloo 2',cursive;color:var(--teal-700);font-size:1.15rem;margin-bottom:10px;}
@@ -438,7 +434,7 @@
     <div class="container autoridade-grid">
       <div class="autoridade-card">
         <div class="foto-circle">
-          <img src="assets/perfil-cristina.jpg" alt="Cristina Shiraishi, instrutora de Yoga e Aerial Yoga" loading="lazy">
+          <img src="assets/perfil-cristina-final.jpg" alt="Cristina Shiraishi, instrutora de Yoga e Aerial Yoga" loading="lazy">
         </div>
         <h3>Cristina Shiraishi</h3>
         <div class="role">Instrutora de Yoga e Aerial Yoga</div>
@@ -502,19 +498,16 @@
         <h2>Um ambiente pensado pra sua prática</h2>
       </div>
       <div class="espaco-grid">
-        <figure class="foto-principal">
+        <figure>
           <img src="assets/espaco-aerial-veranda.jpg" alt="Cristina praticando Aerial Yoga no espaço coberto do studio, com vista para o jardim" loading="lazy">
         </figure>
-        <figure class="foto-secundaria">
+        <figure>
           <img src="assets/espaco-veranda-ampla.jpg" alt="Vista ampla do espaço coberto do studio, com tecidos de Aerial Yoga e jardim ao fundo" loading="lazy">
-        </figure>
-        <figure class="foto-secundaria">
-          <img src="assets/espaco-studio-interno.jpg" alt="Sala interna do studio para aulas de Yoga e Aerial Yoga" loading="lazy">
         </figure>
       </div>
       <div class="espaco-copy" style="margin-top:36px;">
         <p class="espaco-destaque">Ambiente amplo, arejado, em contato com o clima e a natureza — conexão perfeita para suas aulas.</p>
-        <p>O studio fica dentro de uma área verde, com espaço coberto ao ar livre para as aulas de Aerial Yoga e sala interna para os dias mais frios ou chuvosos. Luz natural, plantas ao redor e silêncio — tudo pensado pra você se desconectar da rotina antes mesmo de começar a prática.</p>
+        <p>O studio fica dentro de uma área verde, com espaço coberto ao ar livre pra prática de Aerial Yoga. Luz natural, plantas ao redor e silêncio — tudo pensado pra você se desconectar da rotina antes mesmo de começar a prática.</p>
       </div>
     </div>
   </section>
