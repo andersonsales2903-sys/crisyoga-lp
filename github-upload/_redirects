@@ -1,7 +1,0 @@
-# Redirects específicos por domínio (Cloudflare Pages)
-# www.crisyoga.online é o domínio reservado para a Imersão de Meditação (evento avulso).
-# A raiz desse domínio deve entregar direto a página de inscrição, sem exigir /imersao/ na URL
-# compartilhada com a Cristína (bio, WhatsApp, etc).
-
-https://www.crisyoga.online/ https://www.crisyoga.online/imersao/ 301
-https://crisyoga.online/ https://www.crisyoga.online/imersao/ 301
