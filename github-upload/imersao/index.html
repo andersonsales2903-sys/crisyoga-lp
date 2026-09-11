@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: imersao-meditacao-utero-cacau-2026-09-11m -->
+<!-- build: imersao-meditacao-utero-cacau-2026-09-11n -->
 <!-- Página apartada, não linkada no site principal. -->
 <html lang="pt-BR">
 <head>
@@ -144,7 +144,22 @@
 
   .form-success{display:none;text-align:center;padding:30px 0;}
   .form-success.show{display:block;}
-  .form-success svg{width:52px;height:52px;color:#fff;margin:0 auto 14px;}
+  .form-success > svg{width:52px;height:52px;color:#fff;margin:0 auto 14px;}
+
+  .pix-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:20px;margin:22px 0;text-align:left;display:grid;gap:14px;}
+  .pix-row{display:flex;flex-direction:column;gap:4px;}
+  .pix-label{font-size:.78rem;font-weight:700;letter-spacing:.02em;text-transform:uppercase;color:rgba(255,255,255,.6);}
+  .pix-value{font-size:.98rem;font-weight:600;color:#fff;}
+  .pix-key-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+  .pix-key{font-size:1rem;font-weight:700;color:#fff;letter-spacing:.01em;word-break:break-all;}
+  .pix-copy-btn{flex-shrink:0;background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:6px 14px;font-size:.8rem;font-weight:700;cursor:pointer;transition:background .15s ease;}
+  .pix-copy-btn:hover{background:rgba(255,255,255,.28);}
+  .pix-copy-btn.copied{background:var(--gold-500);border-color:var(--gold-500);}
+  .pix-amount-tag{justify-self:start;display:inline-flex;align-items:center;background:linear-gradient(135deg,var(--gold-500),var(--gold-700));color:#fff;font-weight:700;font-size:.86rem;padding:8px 16px;border-radius:999px;}
+  .form-reset-link{display:inline-block;margin-top:16px;color:rgba(255,255,255,.75);font-size:.86rem;text-decoration:underline;cursor:pointer;background:none;border:none;font-family:inherit;}
+  .form-reset-link:hover{color:#fff;}
+  #whatsapp-btn{background:linear-gradient(135deg,#25D366,#1DA851);font-size:1.08rem;}
+  #whatsapp-btn svg{width:22px;height:22px;flex-shrink:0;}
 
   footer{padding:34px 0;text-align:center;color:var(--ink-soft);font-size:.9rem;}
   footer .logo{display:flex;align-items:center;gap:8px;justify-content:center;font-family:'Baloo 2',cursive;color:var(--teal-700);font-weight:700;margin-bottom:10px;text-decoration:none;}
@@ -266,7 +281,7 @@
       <div class="form-section">
         <span class="eyebrow" style="background:rgba(255,255,255,.14);color:#fff;">Inscrição</span>
         <h2>Garanta sua vaga</h2>
-        <p class="lead-copy">Preencha os dados abaixo — a Cristína confirma sua inscrição diretamente pelo WhatsApp.</p>
+        <p class="lead-copy">Preencha os dados abaixo — sua inscrição será confirmada pelo WhatsApp.</p>
 
         <form class="lead-form" id="imersao-form" autocomplete="off">
           <div>
@@ -304,8 +319,33 @@
 
         <div class="form-success" id="form-success">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <h3 style="color:#fff;">Quase lá!</h3>
-          <p style="color:rgba(255,255,255,.85);">Abrindo o WhatsApp da Cristína com sua inscrição...</p>
+          <h3 style="color:#fff;">Inscrição Realizada! 🎉</h3>
+          <p style="color:rgba(255,255,255,.85);">Obrigada, <strong id="success-nome" style="color:#fff;"></strong>! Será um prazer dividir esta manhã especial com você! Para confirmar, realize o PIX do valor escolhido e confirme pelo WhatsApp.</p>
+
+          <div class="pix-card">
+            <div class="pix-row">
+              <span class="pix-label">Chave PIX (CPF)</span>
+              <div class="pix-key-row">
+                <span class="pix-key" id="pix-key">262.888.958-73</span>
+                <button type="button" class="pix-copy-btn" id="pix-copy-btn">Copiar</button>
+              </div>
+            </div>
+            <div class="pix-row">
+              <span class="pix-label">Beneficiária</span>
+              <span class="pix-value">Maria Simone dos Santos</span>
+            </div>
+            <div class="pix-row">
+              <span class="pix-label">Banco</span>
+              <span class="pix-value">Nubank — Nu Pagamentos</span>
+            </div>
+            <span class="pix-amount-tag">Valor Escolhido:&nbsp;<span id="pix-amount"></span></span>
+          </div>
+
+          <button type="button" class="btn btn-primary btn-block" id="whatsapp-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.07-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2z" opacity=".18"/><path d="M17.47 14.38c-.29-.14-1.7-.84-1.96-.93-.26-.1-.45-.14-.64.14-.19.29-.74.93-.9 1.12-.17.19-.33.21-.62.07-.29-.14-1.22-.45-2.32-1.43-.86-.77-1.44-1.71-1.6-2-.17-.29-.02-.45.13-.59.13-.13.29-.33.43-.5.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.5-.07-.14-.64-1.54-.88-2.11-.23-.55-.47-.48-.64-.49h-.55c-.19 0-.5.07-.76.36-.26.29-1 1-1 2.43 0 1.43 1.03 2.81 1.17 3 .14.19 2.03 3.1 4.92 4.34.69.3 1.22.48 1.64.61.69.22 1.32.19 1.81.11.55-.08 1.7-.7 1.94-1.37.24-.67.24-1.24.17-1.37-.07-.12-.26-.19-.55-.33z"/></svg>
+            Enviar Comprovante via WhatsApp
+          </button>
+          <button type="button" class="form-reset-link" id="form-reset-link">Fazer nova inscrição</button>
         </div>
       </div>
     </div>
@@ -327,6 +367,14 @@
   var form = document.getElementById("imersao-form");
   var successBox = document.getElementById("form-success");
   var submitBtn = document.getElementById("submit-btn");
+  var successNome = document.getElementById("success-nome");
+  var pixAmount = document.getElementById("pix-amount");
+  var pixKey = document.getElementById("pix-key");
+  var pixCopyBtn = document.getElementById("pix-copy-btn");
+  var whatsappBtn = document.getElementById("whatsapp-btn");
+  var resetLink = document.getElementById("form-reset-link");
+
+  var pendingRedirect = null;
 
   if (form){
     form.addEventListener("submit", function(e){
@@ -355,34 +403,76 @@
         data_envio: new Date().toISOString()
       };
 
-      var logPromise;
       if (CFG.SHEET_WEBHOOK_URL){
-        logPromise = fetch(CFG.SHEET_WEBHOOK_URL, {
+        fetch(CFG.SHEET_WEBHOOK_URL, {
           method: "POST",
           mode: "no-cors",
           headers: { "Content-Type": "text/plain;charset=utf-8" },
           body: JSON.stringify(payload)
         }).catch(function(err){ console.warn("Falha ao registrar inscrição na planilha:", err); });
-      } else {
-        logPromise = Promise.resolve();
       }
 
-      var redirect = function(){
+      pendingRedirect = function(){
         var msg = "Olá Cristína! Acabei de realizar minha inscrição na " + eventName + ".\n" +
                   "Nome: " + nome + "\n" +
                   "Valor: " + valor;
         window.location.href = "https://wa.me/" + CFG.WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
       };
 
+      if (successNome) successNome.textContent = nome;
+      if (pixAmount) pixAmount.textContent = valor;
+
       form.style.display = "none";
       successBox.classList.add("show");
+    });
+  }
 
-      Promise.race([
-        logPromise,
-        new Promise(function(resolve){ setTimeout(resolve, 900); })
-      ]).finally(function(){
-        setTimeout(redirect, 500);
-      });
+  if (whatsappBtn){
+    whatsappBtn.addEventListener("click", function(){
+      if (pendingRedirect) pendingRedirect();
+    });
+  }
+
+  if (pixCopyBtn && pixKey){
+    pixCopyBtn.addEventListener("click", function(){
+      var value = pixKey.textContent.trim();
+      var done = function(){
+        var original = "Copiar";
+        pixCopyBtn.textContent = "Copiado!";
+        pixCopyBtn.classList.add("copied");
+        setTimeout(function(){
+          pixCopyBtn.textContent = original;
+          pixCopyBtn.classList.remove("copied");
+        }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(value).then(done).catch(function(){
+          fallbackCopy(value); done();
+        });
+      } else {
+        fallbackCopy(value); done();
+      }
+    });
+  }
+
+  function fallbackCopy(text){
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch(err){}
+    document.body.removeChild(ta);
+  }
+
+  if (resetLink){
+    resetLink.addEventListener("click", function(){
+      successBox.classList.remove("show");
+      form.reset();
+      form.style.display = "";
+      submitBtn.disabled = false;
+      pendingRedirect = null;
     });
   }
 })();
