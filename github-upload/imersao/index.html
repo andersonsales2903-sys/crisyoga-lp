@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- build: imersao-meditacao-utero-cacau-2026-09-11 -->
+<!-- build: imersao-meditacao-utero-cacau-2026-09-11b -->
 <!-- Página apartada, não linkada no site principal. -->
 <html lang="pt-BR">
 <head>
@@ -32,6 +32,10 @@
     --teal-400:#4aa9c0;
     --teal-100:#edf6f9;
     --bg:#fbfaf6;
+    --bg-warm-top:#fdf9f3;
+    --bg-warm-mid:#faf0e6;
+    --terracotta:#f3ddd0;
+    --teal-wash:#d9ecef;
     --cream:#fffdf9;
     --ink:#173238;
     --ink-soft:#3f5d63;
@@ -41,7 +45,18 @@
     --maxw:880px;
   }
   *{box-sizing:border-box;}
-  body{margin:0;font-family:'Mulish',sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;}
+  body{
+    margin:0;font-family:'Mulish',sans-serif;color:var(--ink);line-height:1.55;
+    background:linear-gradient(180deg, var(--bg-warm-top) 0%, var(--bg-warm-mid) 42%, var(--bg) 100%);
+    overflow-x:hidden;
+  }
+  .bg-blob{position:fixed;border-radius:50%;filter:blur(70px);pointer-events:none;z-index:-1;}
+  .bg-blob-warm{width:520px;height:520px;top:-140px;right:-120px;background:rgba(243,221,208,.55);}
+  .bg-blob-cool{width:420px;height:420px;top:52vh;left:-150px;background:rgba(217,236,239,.45);}
+  @media (max-width:640px){
+    .bg-blob-warm{width:320px;height:320px;}
+    .bg-blob-cool{width:280px;height:280px;}
+  }
   h1,h2,h3{font-family:'Baloo 2',cursive;color:var(--teal-900);line-height:1.2;margin:0 0 14px;}
   p{margin:0 0 14px;}
   .container{max-width:var(--maxw);margin:0 auto;padding:0 20px;}
@@ -118,6 +133,9 @@
 </style>
 </head>
 <body>
+
+<div class="bg-blob bg-blob-warm" aria-hidden="true"></div>
+<div class="bg-blob bg-blob-cool" aria-hidden="true"></div>
 
 <header class="site">
   <div class="container">
